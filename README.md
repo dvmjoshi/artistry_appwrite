@@ -20,7 +20,7 @@ A new Flutter application.
  https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk
   https://youtube.com/playlist?list=PLUiueC0kTFqITusEntt8bjhm20hv30Fsa
 </details>
-## Getting Started
+
 <a href="https://appwrite.io/" target="_blank" style="position: fixed;right: 18px;bottom: 18px;z-index: 999;">
   <img style="width: 160px;" src="https://appwrite.io/images-ee/press/badge-white-button.svg" alt="Built with Appwrite">
 </a>
