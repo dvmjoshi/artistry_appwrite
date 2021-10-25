@@ -9,15 +9,15 @@ A new Flutter application.
 ## Resources to get started with app write 
 <details>
      <summary> Click to expand to know about appwrite  </summary>
-  https://appwrite.io/docs
-  https://30days.appwrite.io/
+  https://appwrite.io/docs<br>
+  https://30days.appwrite.io/<br>
   https://github.com/appwrite/awesome-appwrite
 </details>
 
 ## Learn appwrite with React Bits (Damodar Lohani)
 <details>
      <summary> Click to expand to watch awesome tutorial </summary>
- https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk
+ https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk<br>
   https://youtube.com/playlist?list=PLUiueC0kTFqITusEntt8bjhm20hv30Fsa
 </details>
 
