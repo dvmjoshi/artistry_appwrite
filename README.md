@@ -30,7 +30,7 @@ possibilities with backend solutions. legion of open source developer making too
 
 ```dart
 class AppConstant {
-  String projectId="projectDI"; // set your own project id
+  String projectId="projectID"; // set your own project id
   String endpoint="endpoint";// set your own endpoint
 }
 ```
