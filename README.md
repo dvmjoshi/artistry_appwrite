@@ -1,8 +1,29 @@
 # artistry_appwrite
 
 A new Flutter application.
+## Hacktober
+## Features
+* Crud operation with appwrite
+* Searching
+* Simple cool animation touch 
 
+## Resources to get started with app write 
+<details>
+     <summary> Click to expand to know about appwrite  </summary>
+  https://appwrite.io/docs
+  https://30days.appwrite.io/
+  https://github.com/appwrite/awesome-appwrite
+</details>
+## Learn appwrite with React Bits (Damodar Lohani)
+<details>
+     <summary> Click to expand to watch awesome tutorial </summary>
+ https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk
+  https://youtube.com/playlist?list=PLUiueC0kTFqITusEntt8bjhm20hv30Fsa
+</details>
 ## Getting Started
+<a href="https://appwrite.io/" target="_blank" style="position: fixed;right: 18px;bottom: 18px;z-index: 999;">
+  <img style="width: 160px;" src="https://appwrite.io/images-ee/press/badge-white-button.svg" alt="Built with Appwrite">
+</a>
 ## Screenshots
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
