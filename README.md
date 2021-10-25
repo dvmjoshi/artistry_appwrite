@@ -1,4 +1,4 @@
-# artistry_appwrite 
+<h1 align="center">Artistry: Appwrite - Flutter Demo 💻</h1>
 Far far away in the galaxy developer looking for power that unlocks infinite
 possibilities with backend solutions. legion of open source developer making tool Appwrite that give you Infinity Gems to control your all backend solution
 
