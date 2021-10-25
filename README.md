@@ -1,4 +1,5 @@
 <h1 align="center">Artistry: Appwrite - Flutter Demo 💻</h1>
+Artistry is a demo app built with flutter and Appwrite backend for Hacktoberfest 2021, that demonstrates how to perform crud operation,searching ,authentication with touch of cool animations.
 Far far away in the galaxy developer looking for power that unlocks infinite
 possibilities with backend solutions. legion of open source developer making tool Appwrite that give you Infinity Gems to control your all backend solution.<br>
 <br>
