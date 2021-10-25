@@ -1,6 +1,6 @@
 <h1 align="center">Artistry: Appwrite - Flutter Demo 💻</h1>
 Far far away in the galaxy developer looking for power that unlocks infinite
-possibilities with backend solutions. legion of open source developer making tool Appwrite that give you Infinity Gems to control your all backend solution
+possibilities with backend solutions. legion of open source developer making tool Appwrite that give you Infinity Gems to control your all backend solution.<br>
 
 <!-- 'Made with Appwrite' badge -->
 <a href="https://appwrite.io/" target="_blank" style="position: fixed;right: 18px;bottom: 18px;z-index: 999;">
@@ -8,11 +8,12 @@ possibilities with backend solutions. legion of open source developer making too
 </a>
 
 ## Hacktober 
-## Features
+## Features 👨‍🏫
+* Authentication 
 * Crud operation with appwrite
 * Searching
 * Simple cool animation touch 
-## Resources to get started with app write 
+## Resources to get started with app write 😎
 <details>
      <summary> Click to expand to know about appwrite  </summary>
   https://appwrite.io/docs<br>
@@ -20,13 +21,13 @@ possibilities with backend solutions. legion of open source developer making too
   https://github.com/appwrite/awesome-appwrite
 </details>
 
-## Learn appwrite with React Bits (Damodar Lohani)
+## Learn appwrite with React Bits (Damodar Lohani) 🖥
 <details>
      <summary> Click to expand to watch awesome tutorial </summary>
  https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk<br>
   https://youtube.com/playlist?list=PLUiueC0kTFqITusEntt8bjhm20hv30Fsa
 </details>
-## 📁 | Replace the <b>Endpoint and Project ID</b> in <i>lib/services/app_constant</i>.
+ ## 📁 | Replace the <b>Endpoint and Project ID</b> in <i>lib/services/app_constant</i>.
 
 ```dart
 class AppConstant {
