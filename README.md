@@ -7,8 +7,7 @@ possibilities with backend solutions. legion of open source developer making too
   <img style="width: 130px;" src="https://appwrite.io/images-ee/press/badge-pink-box.svg" alt="Built with Appwrite">
 </a>
 
-## Hacktober 
-## Features 👨‍🏫
+## Features 👨‍🏫           🚀 Hacktober                   
 * Authentication 
 * Crud operation with appwrite
 * Searching
