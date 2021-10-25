@@ -13,6 +13,7 @@ A new Flutter application.
   https://30days.appwrite.io/
   https://github.com/appwrite/awesome-appwrite
 </details>
+
 ## Learn appwrite with React Bits (Damodar Lohani)
 <details>
      <summary> Click to expand to watch awesome tutorial </summary>
