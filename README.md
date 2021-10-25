@@ -37,10 +37,10 @@ class AppConstant {
 <!-- <br> -->
 <br/>
 
-## Screenshots
+## Screenshots 📱
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
-## Video
+## Video Demo 📺
 <hr />
 
 https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4?width=200&height=200
