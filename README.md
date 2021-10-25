@@ -5,7 +5,7 @@ possibilities with backend solutions. legion of open source developer making too
 <a href="https://appwrite.io/" target="_blank" style="position: fixed;right: 18px;bottom: 18px;z-index: 999;">
   <img style="width: 130px;" src="https://appwrite.io/images-ee/press/badge-pink-box.svg" alt="Built with Appwrite">
 </a>
-## Hacktober
+## Hacktober <br>
 ## Features
 * Crud operation with appwrite
 * Searching
