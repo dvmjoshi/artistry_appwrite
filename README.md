@@ -9,6 +9,7 @@ A new Flutter application.
 ## Video
 <video width="400" controls>
   <source src="https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4" type="video/mp4">
+    <source src="https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4" type="video/ogg">
   Your browser does not support HTML video.
 </video>
 
