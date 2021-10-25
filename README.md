@@ -26,7 +26,18 @@ possibilities with backend solutions. legion of open source developer making too
  https://youtube.com/playlist?list=PLUiueC0kTFqI9WIeUSkKvM-a_3fyaIiuk<br>
   https://youtube.com/playlist?list=PLUiueC0kTFqITusEntt8bjhm20hv30Fsa
 </details>
+## 📁 | Replace the <b>Endpoint and Project ID</b> in <i>lib/services/app_constant</i>.
 
+```dart
+class AppConstant {
+  String projectId="615ae8f1259db"; // set your own project id
+  String endpoint="http://192.168.0.107/v1";// set your own endpoint
+}
+```
+<!-- <br> -->
+
+
+<br/>
 ## Screenshots
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
