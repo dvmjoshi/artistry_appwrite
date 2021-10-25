@@ -6,6 +6,10 @@ A new Flutter application.
 ## Screenshots
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
+## Video
+<!-- <p align="center">
+  <a href="https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4" target="_blank"><img src="https://user-images.githubusercontent.com/24698014/138629033-c75ce65f-67cb-4537-9d6a-5acdea0e906e.png"></a>
+</p> -->
 
 ## Happy learning. :+1:
 If you found this project useful, then please consider giving it a :star: on Github and sharing it with your friends via social media.
