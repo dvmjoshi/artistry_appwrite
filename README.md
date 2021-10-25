@@ -1,12 +1,11 @@
 <h1 align="center">Artistry: Appwrite - Flutter Demo 💻</h1>
 Far far away in the galaxy developer looking for power that unlocks infinite
 possibilities with backend solutions. legion of open source developer making tool Appwrite that give you Infinity Gems to control your all backend solution.<br>
-
+<br>
 <!-- 'Made with Appwrite' badge -->
 <a href="https://appwrite.io/" target="_blank" style="position: fixed;right: 18px;bottom: 18px;z-index: 999;">
   <img style="width: 130px;" src="https://appwrite.io/images-ee/press/badge-pink-box.svg" alt="Built with Appwrite">
-</a>
-
+</a><br>
 ## Hacktober 
 ## Features 👨‍🏫
 * Authentication 
@@ -36,9 +35,8 @@ class AppConstant {
 }
 ```
 <!-- <br> -->
-
-
 <br/>
+
 ## Screenshots
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
