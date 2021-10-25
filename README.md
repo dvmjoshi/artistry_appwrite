@@ -7,11 +7,15 @@ A new Flutter application.
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/24698014/138628680-df0c2c41-e053-4f72-86b5-d3041b0af150.png?raw=true)|
 ## Video
-<video width="400" controls>
-  <source src="https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4" type="video/mp4">
-    <source src="https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4" type="video/ogg">
-  Your browser does not support HTML video.
-</video>
+<hr />
+
+https://user-images.githubusercontent.com/24698014/138628686-71af968b-288f-42a6-bd81-4cf83235e875.mp4?width=200&height=200
+
+<!-- <p align="center">
+  <a href="https://youtu.be/3-ikI6ZxBZA" target="_blank"><img src="internals/img/subtitler-intro-imgur.gif"></a>
+</p> -->
+
+<hr />
 
 
 ## Happy learning. :+1:
