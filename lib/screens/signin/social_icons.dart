@@ -5,7 +5,11 @@ class SocialIcon extends StatelessWidget {
   final IconData iconData;
   final Function onPressed;
   const SocialIcon(
-      {required this.colors, required this.iconData, required this.onPressed});
+      {Key? key,
+      required this.colors,
+      required this.iconData,
+      required this.onPressed})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,7 +21,7 @@ class SocialIcon extends StatelessWidget {
             shape: BoxShape.circle,
             gradient: LinearGradient(colors: colors, tileMode: TileMode.clamp)),
         child: RawMaterialButton(
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           onPressed: onPressed(),
           child: Icon(iconData, color: Colors.white),
         ),

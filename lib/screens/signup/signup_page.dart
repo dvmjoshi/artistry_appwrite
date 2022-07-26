@@ -7,7 +7,7 @@ class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
 
   @override
-  _MyAppState createState() => new _MyAppState();
+  State<SignUpPage> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<SignUpPage> {
@@ -27,8 +27,8 @@ class _MyAppState extends State<SignUpPage> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Container(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: SizedBox(
                     height: 280,
                     child: Image.network(
                         "https://cdn.dribbble.com/users/634508/screenshots/2829739/media/c5c6c9e0c4bd87ccc8bb1f14aa2c88d9.gif")),
@@ -145,7 +145,7 @@ class _MyAppState extends State<SignUpPage> {
                       )),
                   SizedBox(height: ScreenUtil().setHeight(40)),
                   Row(
-                    children: <Widget>[
+                    children: const[
                       SizedBox(
                         width: 12.0,
                       ),
@@ -166,8 +166,8 @@ class _MyAppState extends State<SignUpPage> {
                             borderRadius: BorderRadius.circular(6.0),
                             boxShadow: [
                               BoxShadow(
-                                  color: Color(0xFF6078ea).withOpacity(.3),
-                                  offset: Offset(0.0, 8.0),
+                                  color: const Color(0xFF6078ea).withOpacity(.3),
+                                  offset: const Offset(0.0, 8.0),
                                   blurRadius: 8.0)
                             ]),
                         child: Material(

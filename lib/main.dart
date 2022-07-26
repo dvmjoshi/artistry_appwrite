@@ -2,7 +2,6 @@ import 'package:artistry_appwrite/screens/signin/signin_page.dart';
 import 'package:artistry_appwrite/screens/splash_page.dart';
 import 'package:artistry_appwrite/services/api_service.dart';
 import 'package:flutter/material.dart';
-import 'package:appwrite/appwrite.dart';
 
 import 'home_page.dart';
 
@@ -25,10 +24,10 @@ class MyApp extends StatelessWidget {
         future: ApiService.instance?.getUser(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return SplashPage();
+            return const SplashPage();
           }
           if (snapshot.hasData) {
-            return HomePage();
+            return const HomePage();
           }
           return const SignInPage();
         },

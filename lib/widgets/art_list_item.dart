@@ -9,7 +9,7 @@ import 'nemorphic_container.dart';
 
 class ArtListItem extends StatelessWidget {
   final Artisty? artisty;
-  ArtListItem({Key? key, this.artisty}) : super(key: key);
+  const ArtListItem({Key? key, this.artisty}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ArtListItem extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 3,
                 blurRadius: 4,
-                offset: Offset(0, 1))
+                offset: const Offset(0, 1))
           ],
         ),
         child: FadeAnimation(
@@ -65,7 +65,7 @@ class ArtListItem extends StatelessWidget {
                                 color: Colors.white.withOpacity(0.2),
                                 spreadRadius: 3,
                                 blurRadius: 4,
-                                offset: Offset(0, 1))
+                                offset: const Offset(0, 1))
                           ]),
                       height: 170,
                       width: 170,
@@ -74,7 +74,7 @@ class ArtListItem extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(300.0),
                           child: Image.network(
-                            artisty!.artImage!,
+                            artisty!.artImage,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -88,7 +88,7 @@ class ArtListItem extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         Text(
-                          artisty!.name!,
+                          artisty!.name,
                           style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

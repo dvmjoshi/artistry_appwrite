@@ -5,6 +5,8 @@ import 'package:artistry_appwrite/widgets/art_list_item.dart';
 import 'package:flutter/material.dart';
 
 class ArtList extends StatefulWidget {
+  const ArtList({Key? key}) : super(key: key);
+
   @override
   State<ArtList> createState() => _ArtListState();
 }
@@ -18,10 +20,10 @@ class _ArtListState extends State<ArtList> {
     artistydata = ApiService.instance?.artistys;
   }
 
-  Future<Null> refreshlist() async {
+  Future<void> refreshlist() async {
     refreshkey.currentState
         ?.show(); // change atTop to false to show progress indicator at bottom
-    await Future.delayed(Duration(seconds: 2)); //wait here for 2 second
+    await Future.delayed(const Duration(seconds: 2)); //wait here for 2 second
     setState(() {
       artistydata = ApiService.instance?.artistys;
     });

@@ -11,11 +11,11 @@ class NeumorphicContainer extends StatefulWidget {
     required this.child,
     this.bevel = 10.0,
     required this.color,
-  })  : this.blurOffset = Offset(bevel / 2, bevel / 2),
+  })  : blurOffset = Offset(bevel / 2, bevel / 2),
         super(key: key);
 
   @override
-  _NeumorphicContainerState createState() => _NeumorphicContainerState();
+  State<NeumorphicContainer> createState() => _NeumorphicContainerState();
 }
 
 class _NeumorphicContainerState extends State<NeumorphicContainer> {
@@ -35,7 +35,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
 
   @override
   Widget build(BuildContext context) {
-    final color = this.widget.color;
+    final color = widget.color;
 
     return Listener(
       onPointerDown: _onPointerDown,

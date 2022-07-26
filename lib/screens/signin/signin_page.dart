@@ -4,7 +4,6 @@ import 'package:artistry_appwrite/screens/signin/social_icons.dart';
 import 'package:artistry_appwrite/screens/signup/signup_page.dart';
 import 'package:artistry_appwrite/services/api_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_icons.dart';
@@ -12,7 +11,7 @@ import 'custom_icons.dart';
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
   @override
-  _MyAppState createState() => _MyAppState();
+  State<SignInPage> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<SignInPage> {
@@ -31,7 +30,7 @@ class _MyAppState extends State<SignInPage> {
   Widget radioButton(bool isSelected) => Container(
         width: 16.0,
         height: 16.0,
-        padding: EdgeInsets.all(2.0),
+        padding: const EdgeInsets.all(2.0),
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(width: 2.0, color: Colors.black)),
@@ -39,14 +38,14 @@ class _MyAppState extends State<SignInPage> {
             ? Container(
                 width: double.infinity,
                 height: double.infinity,
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle, color: Colors.black),
               )
             : Container(),
       );
 
   Widget horizontalLine() => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Container(
           width: ScreenUtil().setWidth(120),
           height: 1.0,
@@ -56,12 +55,12 @@ class _MyAppState extends State<SignInPage> {
 
   @override
   Widget build(BuildContext context) {
+    //
     ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(750, 1334),
-        orientation: Orientation.portrait);
+      context,
+      designSize: const Size(750, 1334),
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
@@ -71,8 +70,8 @@ class _MyAppState extends State<SignInPage> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Container(
+                padding: const EdgeInsets.only(top: 20.0),
+                child: SizedBox(
                     height: 280,
                     child: Image.network(
                         "https://cdn.dribbble.com/users/634508/screenshots/2652214/media/cee172a6db8670b79b5ef42e382025e5.gif")),
@@ -232,7 +231,7 @@ class _MyAppState extends State<SignInPage> {
                                             BoxShadow(
                                                 color: const Color(0xFF6078ea)
                                                     .withOpacity(.3),
-                                                offset: Offset(0.0, 8.0),
+                                                offset: const Offset(0.0, 8.0),
                                                 blurRadius: 8.0)
                                           ]),
                                       child: Material(

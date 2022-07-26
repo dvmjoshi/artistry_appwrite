@@ -19,7 +19,7 @@ class SpaceLetter extends StatefulWidget {
       required this.iconsize})
       : super(key: key);
   @override
-  _SpaceLetterState createState() => _SpaceLetterState();
+  State<SpaceLetter> createState() => _SpaceLetterState();
 }
 
 class _SpaceLetterState extends State<SpaceLetter> {
@@ -32,7 +32,7 @@ class _SpaceLetterState extends State<SpaceLetter> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(Duration(seconds: 0), (Timer timer) {
+    Timer.periodic(const Duration(seconds: 0), (Timer timer) {
       setState(() {
         elevation = 0;
         letterSpacingBegin = 1;
@@ -60,11 +60,11 @@ class _SpaceLetterState extends State<SpaceLetter> {
           borderRadius: BorderRadius.circular(10),
           color: isPressed
               ? Colors.white.withOpacity(widget.opacity)
-              : Color.fromRGBO(45, 45, 45, 1),
+              : const Color.fromRGBO(45, 45, 45, 1),
           boxShadow: [
             BoxShadow(
               color: isPressed ? Colors.black12 : Colors.black26,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
               blurRadius: 20,
             ),
           ],
