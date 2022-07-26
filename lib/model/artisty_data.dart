@@ -1,8 +1,8 @@
 import 'package:appwrite/models.dart';
 
 class Artisty {
-  String id;
-  String collection;
+  String? id;
+  String? collection;
   String name;
   String artImage;
   String description;

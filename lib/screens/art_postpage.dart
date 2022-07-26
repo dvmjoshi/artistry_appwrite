@@ -201,6 +201,7 @@ class _ArtPostPageState extends State<ArtPostPage> {
                                               ),
                                               onChanged: (result) async {
                                                 Artisty artisty = Artisty(
+                                                  collection: _isEdit ? widget.artisty?.collection : null,
                                                   id: _isEdit
                                                       ? widget.artisty?.id
                                                       : null,
