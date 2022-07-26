@@ -1,16 +1,12 @@
 import 'package:artistry_appwrite/model/artisty_data.dart';
 import 'package:artistry_appwrite/services/api_service.dart';
 import 'package:artistry_appwrite/services/hexcolor.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animations/simple_animations.dart';
 
 class DetailPage extends StatelessWidget {
-  Artisty? artisty;
-  final String? name;
-  final String? artimage;
-  final String? description;
-  DetailPage({this.name, this.artimage, this.description, this.artisty});
+  final Artisty? artisty;
+  const DetailPage({Key? key, this.artisty}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +18,14 @@ class DetailPage extends StatelessWidget {
               children: <Widget>[
                 Column(
                   children: [
-                    Poster(artisty!.artImage!),
+                    Poster(image: artisty!.artImage),
                     Container(
                       height: 110,
                       color: HexColor("#3A244E"),
                       alignment: Alignment.center,
                       width: MediaQuery.of(context).size.width,
                       child: Text(
-                        artisty!.name!,
+                        artisty!.name,
                         textAlign: TextAlign.start,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
@@ -41,8 +37,10 @@ class DetailPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                PosterAvatar(
-                    "https://cdn.dribbble.com/users/498340/screenshots/15255976/media/4b9f7dcdbcd47b9165f2b9ae3b060618.jpg?compress=1&resize=800x600"),
+                const PosterAvatar(
+                  image:
+                      "https://cdn.dribbble.com/users/498340/screenshots/15255976/media/4b9f7dcdbcd47b9165f2b9ae3b060618.jpg?compress=1&resize=800x600",
+                ),
               ],
             ),
           ),
@@ -66,7 +64,7 @@ class DetailPage extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
-              artisty!.description!,
+              artisty!.description,
               style: const TextStyle(
                   color: Colors.black,
                   fontSize: 15,
@@ -102,23 +100,25 @@ class DetailPage extends StatelessWidget {
                 ),
                 onPressed: () async {
                   bool confirm = await showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                            content:
-                                const Text("Are you sure you want to delete ?"),
-                            title: const Text("Confirm Delete"),
-                            actions: <Widget>[
-                              FlatButton(
-                                textColor: Colors.black,
-                                child: Text("Cancel"),
-                                onPressed: () => Navigator.pop(context, false),
-                              ),
-                              FlatButton(
-                                child: Text("Delete"),
-                                onPressed: () => Navigator.pop(context, true),
-                              ),
-                            ],
-                          ));
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: const Text("Are you sure you want to delete ?"),
+                      title: const Text("Confirm Delete"),
+                      actions: <Widget>[
+                        TextButton(
+                          child: const Text(
+                            "Cancel",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          onPressed: () => Navigator.pop(context, false),
+                        ),
+                        TextButton(
+                          child: const Text("Delete"),
+                          onPressed: () => Navigator.pop(context, true),
+                        ),
+                      ],
+                    ),
+                  );
                   if (confirm) {
                     await ApiService.instance?.deleteArt(artisty!);
                     Navigator.pop(context);
@@ -134,23 +134,25 @@ class DetailPage extends StatelessWidget {
 }
 
 class Poster extends StatelessWidget {
-  String image;
+  final String image;
 
-  Poster(this.image);
+  const Poster({Key? key, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return CustomAnimation<double>(
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
       tween: Tween<double>(begin: 0, end: 300),
       builder: (context, child, animation) {
         return Container(
           height: animation,
           width: double.infinity,
           decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(image), fit: BoxFit.cover)),
+            image: DecorationImage(
+              image: NetworkImage(image),
+              fit: BoxFit.cover,
+            ),
+          ),
         );
       },
     );
@@ -158,16 +160,15 @@ class Poster extends StatelessWidget {
 }
 
 class PosterAvatar extends StatelessWidget {
-  String image;
+  final String image;
 
-  PosterAvatar(this.image);
+  const PosterAvatar({Key? key, required this.image}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     final size = MediaQuery.of(context).size;
     return CustomAnimation<double>(
-      duration: Duration(milliseconds: 600),
+      duration: const Duration(milliseconds: 600),
       delay: Duration(milliseconds: (300 * 2).round()),
       tween: Tween<double>(begin: 0, end: 1),
       curve: Curves.elasticInOut,
@@ -182,18 +183,20 @@ class PosterAvatar extends StatelessWidget {
               height: 95,
               width: 95,
               decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(image),
-                    fit: BoxFit.cover,
+                image: DecorationImage(
+                  image: NetworkImage(image),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(100),
+                border: Border.all(color: Colors.black38, width: 5),
+                boxShadow: const [
+                  BoxShadow(
+                    offset: Offset(0.5, 1.0),
+                    blurRadius: 5,
+                    color: Colors.grey,
                   ),
-                  borderRadius: BorderRadius.circular(100),
-                  border: Border.all(color: Colors.black38, width: 5),
-                  boxShadow: const [
-                    BoxShadow(
-                        offset: Offset(0.5, 1.0),
-                        blurRadius: 5,
-                        color: Colors.grey)
-                  ]),
+                ],
+              ),
             ),
           ),
         );
