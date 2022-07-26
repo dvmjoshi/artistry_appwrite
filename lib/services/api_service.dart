@@ -1,17 +1,17 @@
 import 'dart:async';
-import 'dart:ffi';
 
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
 import 'package:artistry_appwrite/model/artisty_data.dart';
 
 import 'package:artistry_appwrite/services/app_constant.dart';
+import 'package:flutter/foundation.dart';
 
 class ApiService {
   static ApiService? _instance;
   late final Client _client;
   late final Account _account;
-  late final Database _database;
+  late final Databases _database;
   late List<Artisty> _artisty;
   String? _query;
   List<Artisty>? _searchResults;
@@ -29,7 +29,7 @@ class ApiService {
       endPoint: AppConstant().endpoint,
     ).setProject(AppConstant().projectId);
     _account = Account(_client);
-    _database = Database(_client);
+    _database = Databases(_client, databaseId: 'DATABASE ID');
     _artisty = [];
     artistyData();
   }
@@ -39,11 +39,15 @@ class ApiService {
   }
 
   Future login({required String email, required String password}) {
-    return _account.createSession(email: email, password: password);
+    return _account.createEmailSession(email: email, password: password);
   }
 
   Future signup({required String email, required String password}) {
-    return _account.create(email: email, password: password);
+    return _account.create(
+      userId: "unique()",
+      email: email,
+      password: password,
+    );
   }
 
   Future<User> getUser() async {
@@ -64,61 +68,89 @@ class ApiService {
       final res = await _database.listDocuments(collectionId: collectionID);
 
       _artisty = List<Artisty>.from(
-          res.documents.map((e) => Artisty.fromJson(e.data)));
+        res.documents.map((e) => Artisty.fromJson(e)),
+      );
+
+      return _artisty;
     } catch (e) {
-      print(e);
+      if (kDebugMode) print(e);
+      return null;
     }
   }
 
   Future addArt(Artisty artisty) async {
     try {
       final res = await _database.createDocument(
-          collectionId: collectionID,
-          data: artisty.toJson(),
-          read: ['*'],
-          write: ['*']);
-      artistys.add(Artisty.fromJson(res.data));
-      print(res);
+        collectionId: collectionID,
+        documentId: 'unique()', // Add custom document ID if you want
+        data: artisty.toJson(),
+        read: ['*'],
+        write: ['*'],
+      );
+
+      artistys.add(Artisty.fromJson(res));
+
+      if (kDebugMode) print(res);
     } on AppwriteException catch (e) {
-      print(e.message);
+      if (kDebugMode) print(e.message);
     }
   }
 
   Future updateArt(Artisty artisty) async {
     try {
       final res = await _database.updateDocument(
-          collectionId: collectionID,
-          documentId: artisty.id.toString(),
-          data: artisty.toJson(),
-          read: ['*'],
-          write: ['*']);
-      Artisty updated = Artisty.fromJson(res.data);
+        collectionId: collectionID,
+        documentId: artisty.id.toString(),
+        data: artisty.toJson(),
+        read: ['*'],
+        write: ['*'],
+      );
+
+      Artisty updated = Artisty.fromJson(res);
+
       _artisty = List.from(
-          _artisty.map((art) => art.id == updated.id ? updated : art));
+        _artisty.map((art) => art.id == updated.id ? updated : art),
+      );
     } on AppwriteException catch (e) {
-      print(e.message);
+      if (kDebugMode) print(e.message);
     }
   }
 
   Future deleteArt(Artisty artisty) async {
     try {
       await _database.deleteDocument(
-          collectionId: collectionID, documentId: artisty.id.toString());
-      _artisty =
-          List<Artisty>.from(_artisty.where((art) => art.id != artisty.id));
+        collectionId: collectionID,
+        documentId: artisty.id,
+      );
+
+      _artisty = List<Artisty>.from(
+        _artisty.where((art) => art.id != artisty.id),
+      );
     } on AppwriteException catch (e) {
-      print(e);
+      if (kDebugMode) print(e);
     }
   }
 
   Future searchArt() async {
+    //
+    // I assumed the query searches the name rather than the descriptiom. If not,
+    // you can change it.
+    //
+    // I did so due to the Query parameter introduced in appwrite
+
     try {
       final res = await _database.listDocuments(
-          collectionId: collectionID, search: _query);
+        collectionId: collectionID,
+        queries: [
+          Query.search('name', _query!), // This one here
+        ],
+      );
+
       _searchResults = List<Artisty>.from(
-          res.documents.map((e) => Artisty.fromJson(e.data)));
+        res.documents.map((e) => Artisty.fromJson(e)),
+      );
     } catch (e) {
-      print(e);
+      if (kDebugMode) print(e);
     }
   }
 }
