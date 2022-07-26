@@ -1,34 +1,31 @@
+import 'package:appwrite/models.dart';
+
 class Artisty {
-  String? id;
-  String? collection;
-  String? name;
-  String? artImage;
-  String? description;
+  String id;
+  String collection;
+  String name;
+  String artImage;
+  String description;
 
   Artisty({
-    this.id,
-    this.collection,
-    this.name,
-    this.artImage,
-    this.description,
+    required this.id,
+    required this.collection,
+    required this.name,
+    required this.artImage,
+    required this.description,
   });
 
-  Artisty.fromJson(Map<String, dynamic> json) {
-    id = json['\$id'];
-    collection = json['$collection'];
+  factory Artisty.fromJson(Document json) => Artisty(
+        id: json.$id,
+        collection: json.$collection,
+        name: json.data['name'],
+        description: json.data['description'],
+        artImage: json.data['artimage'],
+      );
 
-    name = json['name'];
-    description = json['description'];
-    artImage = json['artimage'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-
-    data['name'] = name;
-    data['description'] = description;
-    data['artimage'] = artImage;
-
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+        "name": name,
+        "description": description,
+        "artimage": artImage,
+      };
 }
