@@ -15,7 +15,7 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     final Shader linearGradient = const LinearGradient(
       colors: <Color>[Color(0xffDA44bb), Color(0xff8921aa)],
-    ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+    ).createShader(const Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
     return Container(
       decoration: const BoxDecoration(
         // color: const Color.fromRGBO(45, 45, 45, 1).withOpacity(.99),
@@ -52,7 +52,7 @@ class Header extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).push(PageRouteBuilder(
                           pageBuilder: (context, animation, _) {
-                            return ArtPostPage();
+                            return const ArtPostPage();
                           },
                           opaque: false));
                     },

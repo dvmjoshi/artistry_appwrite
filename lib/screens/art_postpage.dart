@@ -163,7 +163,7 @@ class _ArtPostPageState extends State<ArtPostPage> {
                                         padding: const EdgeInsets.all(20.0),
                                         child: SwipeButton(
                                           initialPosition:
-                                              SwipePosition.SwipeLeft,
+                                              SwipePosition.swipeLeft,
                                           thumb: Padding(
                                             padding: const EdgeInsets.all(5.0),
                                             child: Image.network(

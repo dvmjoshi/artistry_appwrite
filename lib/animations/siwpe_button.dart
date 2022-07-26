@@ -3,8 +3,8 @@ import 'package:flutter/physics.dart';
 
 // TODO: Swipe to start animation
 enum SwipePosition {
-  SwipeLeft,
-  SwipeRight,
+  swipeLeft,
+  swipeRight,
 }
 
 class SwipeButton extends StatefulWidget {
@@ -18,8 +18,8 @@ class SwipeButton extends StatefulWidget {
     this.height = 60.0,
     this.thumbColor,
     this.rectColor,
-  })  : this.borderRadius = borderRadius ?? BorderRadius.zero,
-        super(key: key);
+  })  : borderRadius = borderRadius ?? BorderRadius.zero,
+        super(key: key,);
 
   final Widget? thumb;
   final Widget? content;
@@ -56,7 +56,7 @@ class SwipeButtonState extends State<SwipeButton>
       CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
 
-    if (widget.initialPosition == SwipePosition.SwipeRight) {
+    if (widget.initialPosition == SwipePosition.swipeRight) {
       //  widget.initialPosition=SwipePosition.SwipeRight;
       _controller.value = 1.0;
     }
@@ -159,7 +159,7 @@ class SwipeButtonState extends State<SwipeButton>
     if (_controller.value > 0.5) {
       acceleration = 0.5;
       velocity = fractionalVelocity;
-      result = SwipePosition.SwipeRight;
+      result = SwipePosition.swipeRight;
     }
     // else {
     //   acceleration = -0.5;
@@ -173,9 +173,7 @@ class SwipeButtonState extends State<SwipeButton>
       velocity!,
     );
     _controller.animateWith(simulation).then((_) {
-      if (widget.onChanged != null) {
-        widget.onChanged(result!);
-      }
+      widget.onChanged(result!);
     });
   }
 }
@@ -200,8 +198,7 @@ class _SwipeButtonClipper extends CustomClipper<RRect> {
     required this.animation,
     required this.borderRadius,
     this.position,
-  })  : assert(animation != null && borderRadius != null),
-        super(reclip: animation);
+  })  : super(reclip: animation);
 
   final Animation<double> animation;
   final BorderRadius borderRadius;
