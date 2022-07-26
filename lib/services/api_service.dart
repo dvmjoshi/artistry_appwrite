@@ -120,7 +120,7 @@ class ApiService {
     try {
       await _database.deleteDocument(
         collectionId: collectionID,
-        documentId: artisty.id,
+        documentId: artisty.id!,
       );
 
       _artisty = List<Artisty>.from(
